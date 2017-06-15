@@ -1,6 +1,12 @@
 Parameterized-Remote-Trigger-Plugin
 ===================================
 
+**NOTE**: This fork is being maintained independent of the mainline branch
+because the pull requests there have been languishing. I've pulled in fixes
+that are most relevant to my use-case. In the event that the mainline code is
+updated, this fork will be abandoned in favor of that.
+
+
 A plugin for Jenkins CI  that gives you the ability to trigger parameterized builds on a **remote** Jenkins server as part of your build.
 
 Similar to the [Parameterized Trigger Plugin](https://wiki.jenkins-ci.org/display/JENKINS/Parameterized+Trigger+Plugin), but for remote servers.
