@@ -519,7 +519,7 @@ public class RemoteBuildConfiguration extends Builder {
                         this.failBuild(e, listener);
                     }
                 }
-                listener.getLogger().println("Remote job remote job " + jobName + " is not currenlty building.");
+                listener.getLogger().println("Remote job remote job " + jobName + " is not currently building.");
             } else {
                 this.failBuild(new Exception("Got a blank response from Remote Jenkins Server, cannot continue."), listener);
             }
@@ -584,11 +584,15 @@ public class RemoteBuildConfiguration extends Builder {
                 }
             }
         }
-        listener.getLogger().println("This job is build #[" + Integer.toString(nextBuildNumber) + "] on the remote server.");
-        BuildInfoExporterAction.addBuildInfoExporterAction(build, jobName, nextBuildNumber, Result.NOT_BUILT);
-
         //Have to form the string ourselves, as we might not get a response from non-parameterized builds
         String jobURL = remoteServerURL + "/job/" + this.encodeValue(jobName) + "/";
+
+
+        listener.getLogger().print("This job is build ");
+        listener.hyperlink(jobURL + Integer.toString(nextBuildNumber), "#[" + Integer.toString(nextBuildNumber) + "]");
+        listener.getLogger().println(" on the remote server.");
+        BuildInfoExporterAction.addBuildInfoExporterAction(build, jobName, nextBuildNumber, Result.NOT_BUILT);
+
 
         // This is only for Debug
         // This output whether there is another job running on the remote host that this job had conflicted with.
