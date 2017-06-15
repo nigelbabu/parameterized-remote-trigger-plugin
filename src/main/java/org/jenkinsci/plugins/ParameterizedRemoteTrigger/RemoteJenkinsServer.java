@@ -21,9 +21,9 @@ import hudson.util.ListBoxModel;
 
 /**
  * Holds everything regarding the remote server we wish to connect to, including validations and what not.
- * 
+ *
  * @author Maurice W.
- * 
+ *
  */
 public class RemoteJenkinsServer extends AbstractDescribableImpl<RemoteJenkinsServer> {
 
@@ -117,7 +117,7 @@ public class RemoteJenkinsServer extends AbstractDescribableImpl<RemoteJenkinsSe
 
         /**
          * Validates the given address to see that it's well-formed, and is reachable.
-         * 
+         *
          * @param address
          *            Remote address to be validated
          * @return FormValidation object
