@@ -519,7 +519,7 @@ public class RemoteBuildConfiguration extends Builder {
                         this.failBuild(e, listener);
                     }
                 }
-                listener.getLogger().println("Remote job remote job " + jobName + " is not currently building.");
+                listener.getLogger().println("Remote job " + jobName + " is not currently building.");
             } else {
                 this.failBuild(new Exception("Got a blank response from Remote Jenkins Server, cannot continue."), listener);
             }
